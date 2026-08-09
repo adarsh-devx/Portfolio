@@ -1,15 +1,18 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const FloatingLogo = () => {
     const [progress, setProgress] = useState(0);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
+    const [isGlitchActive, setIsGlitchActive] = useState(false);
 
     useEffect(() => {
         let currentProgress = 0;
         
         const interval = setInterval(() => {
-            // Random increments to feel organic (between 4% and 11% per step)
+            // Random progress steps (between 4% and 11%)
             const increment = Math.floor(Math.random() * 8) + 4;
             currentProgress = Math.min(currentProgress + increment, 100);
             
@@ -17,27 +20,49 @@ const FloatingLogo = () => {
             
             if (currentProgress >= 100) {
                 clearInterval(interval);
-                // Hold at 100% for 300ms, then smoothly swap to the letter 'A'
+                // Transition to active state after a small delay
                 setTimeout(() => {
                     setIsLoaded(true);
                 }, 350);
             }
-        }, 90); // Reaches 100% in ~1.5 - 2s, matching the preloader
+        }, 90);
 
         return () => clearInterval(interval);
     }, []);
 
-    // Calculate dynamic rotation speed based on progress (8s default -> 1.8s at 100%)
+    // Periodic glitch triggers every 4 seconds when site is loaded and not hovered
+    useEffect(() => {
+        if (!isLoaded || isHovered) {
+            setIsGlitchActive(false);
+            return;
+        }
+
+        const glitchLoop = setInterval(() => {
+            setIsGlitchActive(true);
+            
+            // Turn off glitch after 600ms burst
+            setTimeout(() => {
+                setIsGlitchActive(false);
+            }, 600);
+
+        }, 4200);
+
+        return () => clearInterval(glitchLoop);
+    }, [isLoaded, isHovered]);
+
     const dynamicSpeed = Math.max(1.8, 8 - (progress / 100) * 6.2);
 
     return (
         <div className="fixed bottom-5 left-5 md:bottom-8 md:left-8 z-[9999] pointer-events-auto">
-            <div className="group relative size-14 md:size-16 flex items-center justify-center cursor-pointer rounded-full bg-background-light/40 backdrop-blur-sm border border-white/5 shadow-lg shadow-black/20 hover:scale-105 transition-all duration-300">
-                
+            <div 
+                className="group relative size-14 md:size-16 flex items-center justify-center cursor-pointer rounded-full bg-background-light/40 backdrop-blur-sm border border-white/5 shadow-lg shadow-black/20 hover:scale-105 transition-all duration-300"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
                 {/* Spinning Outer Orbit Ring */}
                 <div 
                     className="absolute inset-1 rounded-full border border-dashed border-primary/40 animate-orbit"
-                    style={{ animationDuration: isLoaded ? undefined : `${dynamicSpeed}s` }}
+                    style={{ animationDuration: isLoaded ? (isHovered ? '3s' : '8s') : `${dynamicSpeed}s` }}
                 ></div>
                 
                 {/* Spinning Inner Gradient Ring */}
@@ -45,20 +70,32 @@ const FloatingLogo = () => {
                     className="absolute inset-2.5 rounded-full border border-double border-secondary/20 animate-orbit" 
                     style={{ 
                         animationDirection: 'reverse', 
-                        animationDuration: isLoaded ? '12s' : `${dynamicSpeed * 1.5}s` 
+                        animationDuration: isLoaded ? (isHovered ? '4.5s' : '12s') : `${dynamicSpeed * 1.5}s` 
                     }}
                 ></div>
 
-                {/* Content Swap Area */}
+                {/* Content Area */}
                 <div className="relative flex items-center justify-center">
                     {!isLoaded ? (
-                        /* Percentage Counter Display */
+                        /* Loading percentage counter */
                         <span className="font-roboto-flex text-xs md:text-sm font-semibold text-secondary/90 animate-pulse select-none">
                             {progress}%
                         </span>
                     ) : (
-                        /* Central Brand Letter 'A' (Fades and scales in after loading completes) */
-                        <span className="font-butter text-primary text-xl md:text-2xl font-bold select-none transition-all duration-500 scale-100 opacity-100 animate-fade-in-scale liquid-target">
+                        /* Stylized letter 'A' with dynamic glitch and hover modes */
+                        <span 
+                            className={cn(
+                                "font-butter font-bold text-xl md:text-2xl select-none transition-all duration-300",
+                                {
+                                    // Idle states (Rose color & Glitch styles):
+                                    "text-primary glitch-text": !isHovered,
+                                    "glitch-active": !isHovered && isGlitchActive,
+                                    
+                                    // Hover states (Azure Blue color & Liquid warp styles):
+                                    "text-secondary scale-110 liquid-target": isHovered
+                                }
+                            )}
+                        >
                             A
                         </span>
                     )}
