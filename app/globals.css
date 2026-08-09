@@ -159,7 +159,7 @@
 }
 
 .glitch-active {
-    animation: shake-anim 0.12s steps(2) infinite;
+    animation: shake-anim 0.2s steps(2) infinite;
 }
 
 /* Chromatic Slice Vibrations - Stronger offsets */
@@ -230,9 +230,9 @@
 }
 
 .glitch-active::before {
-    animation: glitch-anim-1 0.25s linear infinite;
+    animation: glitch-anim-1 0.38s linear infinite;
 }
 
 .glitch-active::after {
-    animation: glitch-anim-2 0.25s linear infinite -0.06s;
+    animation: glitch-anim-2 0.38s linear infinite -0.08s;
 }
