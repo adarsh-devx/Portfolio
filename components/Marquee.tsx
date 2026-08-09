@@ -28,30 +28,21 @@ const Marquee = () => {
     );
 
     return (
-        <div className="relative w-full overflow-hidden py-16 md:py-24 my-6 md:my-10">
-            {/* Rotation / Slant Wrapper */}
-            <div className="-rotate-3 scale-105 w-[110%] -ml-[5%] flex flex-col gap-4 relative">
-                
-                {/* Ribbon 1: Crimson Spark (Rose) -> Scrolls Right-to-Left */}
-                <div className="w-full bg-primary text-background py-3.5 md:py-4.5 overflow-hidden flex border-y-2 border-black/10 shadow-lg relative z-[2]">
-                    <div className="flex w-max whitespace-nowrap animate-marquee">
-                        {renderWords()}
-                        {renderWords()}
-                        {renderWords()}
-                        {renderWords()}
-                    </div>
+        <div className="relative w-full overflow-hidden h-[240px] md:h-[280px] my-6 md:my-10">
+            {/* Ribbon 1: Crimson Spark (Rose) -> Tilted Upwards, Scrolls Right-to-Left */}
+            <div className="w-[115%] -ml-[7.5%] bg-primary text-background py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-12 left-0 -rotate-[3.5deg] scale-105 z-[2] origin-center">
+                <div className="flex w-max whitespace-nowrap animate-marquee">
+                    {renderWords()}
+                    {renderWords()}
                 </div>
+            </div>
 
-                {/* Ribbon 2: Azure Ascent (Blue) -> Scrolls Left-to-Right */}
-                <div className="w-full bg-secondary text-foreground py-3.5 md:py-4.5 overflow-hidden flex border-y-2 border-black/10 shadow-lg -mt-3 relative z-[1]">
-                    <div className="flex w-max whitespace-nowrap animate-marquee-reverse">
-                        {renderWords()}
-                        {renderWords()}
-                        {renderWords()}
-                        {renderWords()}
-                    </div>
+            {/* Ribbon 2: Azure Ascent (Blue) -> Tilted Downwards, Scrolls Left-to-Right */}
+            <div className="w-[115%] -ml-[7.5%] bg-secondary text-foreground py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-14 left-0 rotate-[3.5deg] scale-105 z-[1] origin-center">
+                <div className="flex w-max whitespace-nowrap animate-marquee-reverse">
+                    {renderWords()}
+                    {renderWords()}
                 </div>
-
             </div>
         </div>
     );
