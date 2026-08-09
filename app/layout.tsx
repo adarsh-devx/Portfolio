@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Anton, Roboto_Flex } from 'next/font/google';
+import { Anton, Roboto_Flex, Playfair_Display } from 'next/font/google';
 
 import 'lenis/dist/lenis.css';
 import './globals.css';
@@ -13,6 +13,8 @@ import StickyEmail from './_components/StickyEmail';
 import SmoothScroll from '@/components/SmoothScroll';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
+import FluidSimulation from '@/components/FluidSimulation';
+import FloatingLogo from '@/components/FloatingLogo';
 
 const antonFont = Anton({
     weight: '400',
@@ -26,6 +28,13 @@ const robotoFlex = Roboto_Flex({
     style: 'normal',
     subsets: ['latin'],
     variable: '--font-roboto-flex',
+});
+
+const playfairDisplay = Playfair_Display({
+    weight: ['400', '700'],
+    style: ['italic'],
+    subsets: ['latin'],
+    variable: '--font-playfair',
 });
 
 export const metadata: Metadata = {
@@ -52,7 +61,7 @@ export default function RootLayout({
             })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`}
             </Script>
             <body
-                className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
+                className={`${antonFont.variable} ${robotoFlex.variable} ${playfairDisplay.variable} antialiased`}
             >
                 <SmoothScroll>
                     {/* <a
@@ -72,6 +81,8 @@ export default function RootLayout({
                     <Preloader />
                     <ScrollProgressIndicator />
                     <ParticleBackground />
+                    <FluidSimulation />
+                    <FloatingLogo />
                     <StickyEmail />
                 </SmoothScroll>
             </body>

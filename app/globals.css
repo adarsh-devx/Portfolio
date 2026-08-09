@@ -58,6 +58,24 @@
     .markdown-text ul {
         @apply pl-5 mt-2 list-disc;
     }
+
+    .liquid-target {
+        filter: url(#liquid-distortion);
+        will-change: filter;
+    }
+}
+
+@keyframes orbit-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.animate-orbit {
+    animation: orbit-rotate 8s linear infinite;
+}
+
+.group:hover .animate-orbit {
+    animation-duration: 3s;
 }
 
 @font-face {
