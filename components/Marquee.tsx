@@ -29,10 +29,10 @@ const Marquee = () => {
 
     return (
         <div className="relative w-full overflow-hidden h-[240px] md:h-[280px] my-6 md:my-10">
-            {/* Ribbon 1: Crimson Spark (Rose) -> Tilted Upwards, Scrolls Right-to-Left, Crosses on Left (18%) */}
+            {/* Ribbon 1: Crimson Spark (Rose) -> Tilted Upwards, Scrolls Right-to-Left, Centered vertically, Crosses on Left */}
             <div 
-                className="w-[115%] -ml-[7.5%] bg-primary text-background py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-14 left-0 -rotate-[4deg] scale-105 z-[2]"
-                style={{ transformOrigin: '18% center' }}
+                className="w-[115%] -ml-[7.5%] bg-primary text-background py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-[20%] md:top-[24%] left-0 -rotate-[3.2deg] scale-105 z-[2]"
+                style={{ transformOrigin: '15% center' }}
             >
                 <div className="flex w-max whitespace-nowrap animate-marquee">
                     {renderWords()}
@@ -40,10 +40,10 @@ const Marquee = () => {
                 </div>
             </div>
 
-            {/* Ribbon 2: Azure Ascent (Blue) -> Tilted Downwards, Scrolls Left-to-Right, Crosses on Left (18%) */}
+            {/* Ribbon 2: Azure Ascent (Blue) -> Tilted Downwards, Scrolls Left-to-Right, Centered vertically, Crosses on Left */}
             <div 
-                className="w-[115%] -ml-[7.5%] bg-secondary text-foreground py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-14 left-0 rotate-[4deg] scale-105 z-[1]"
-                style={{ transformOrigin: '18% center' }}
+                className="w-[115%] -ml-[7.5%] bg-secondary text-foreground py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-[28%] md:top-[32%] left-0 rotate-[3.2deg] scale-105 z-[1]"
+                style={{ transformOrigin: '15% center' }}
             >
                 <div className="flex w-max whitespace-nowrap animate-marquee-reverse">
                     {renderWords()}
