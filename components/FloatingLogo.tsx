@@ -30,7 +30,7 @@ const FloatingLogo = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Periodic glitch triggers every 4 seconds when site is loaded and not hovered
+    // Periodic glitch triggers every 3 seconds when site is loaded and not hovered
     useEffect(() => {
         if (!isLoaded || isHovered) {
             setIsGlitchActive(false);
@@ -40,12 +40,12 @@ const FloatingLogo = () => {
         const glitchLoop = setInterval(() => {
             setIsGlitchActive(true);
             
-            // Turn off glitch after 600ms burst
+            // Turn off glitch after 1000ms (1 second) burst
             setTimeout(() => {
                 setIsGlitchActive(false);
-            }, 600);
+            }, 1000);
 
-        }, 4200);
+        }, 3000);
 
         return () => clearInterval(glitchLoop);
     }, [isLoaded, isHovered]);
