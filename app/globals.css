@@ -102,3 +102,18 @@
 .animate-marquee-reverse {
     animation: marquee-scroll 25s linear infinite reverse;
 }
+
+@keyframes fade-in-scale {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.animate-fade-in-scale {
+    animation: fade-in-scale 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
