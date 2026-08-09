@@ -29,16 +29,22 @@ const Marquee = () => {
 
     return (
         <div className="relative w-full overflow-hidden h-[240px] md:h-[280px] my-6 md:my-10">
-            {/* Ribbon 1: Crimson Spark (Rose) -> Tilted Upwards, Scrolls Right-to-Left */}
-            <div className="w-[115%] -ml-[7.5%] bg-primary text-background py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-12 left-0 -rotate-[3.5deg] scale-105 z-[2] origin-center">
+            {/* Ribbon 1: Crimson Spark (Rose) -> Tilted Upwards, Scrolls Right-to-Left, Crosses on Left (18%) */}
+            <div 
+                className="w-[115%] -ml-[7.5%] bg-primary text-background py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-14 left-0 -rotate-[4deg] scale-105 z-[2]"
+                style={{ transformOrigin: '18% center' }}
+            >
                 <div className="flex w-max whitespace-nowrap animate-marquee">
                     {renderWords()}
                     {renderWords()}
                 </div>
             </div>
 
-            {/* Ribbon 2: Azure Ascent (Blue) -> Tilted Downwards, Scrolls Left-to-Right */}
-            <div className="w-[115%] -ml-[7.5%] bg-secondary text-foreground py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-14 left-0 rotate-[3.5deg] scale-105 z-[1] origin-center">
+            {/* Ribbon 2: Azure Ascent (Blue) -> Tilted Downwards, Scrolls Left-to-Right, Crosses on Left (18%) */}
+            <div 
+                className="w-[115%] -ml-[7.5%] bg-secondary text-foreground py-4 md:py-5 overflow-hidden flex border-y-2 border-black/15 shadow-2xl absolute top-14 left-0 rotate-[4deg] scale-105 z-[1]"
+                style={{ transformOrigin: '18% center' }}
+            >
                 <div className="flex w-max whitespace-nowrap animate-marquee-reverse">
                     {renderWords()}
                     {renderWords()}
