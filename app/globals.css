@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 222 30% 9%;
+        --background-light: 222 30% 14%;
+        --foreground: 34 100% 92%;
+
+        --card: 222 30% 7%;
+        --card-foreground: 34 100% 92%;
+        --popover: 222 30% 7%;
+        --popover-foreground: 34 100% 92%;
+
+        --primary: 360 100% 71%;
+        --primary-foreground: 222 30% 9%;
+        --secondary: 212 100% 67%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 222 20% 15%;
+        --muted-foreground: 222 15% 70%;
+        --accent: 222 20% 15%;
+        --accent-foreground: 34 100% 92%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 222 20% 18%;
+        --input: 222 20% 15%;
+        --ring: 360 100% 71%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+@layer base {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .font-max {
+        font-family: var(--font-playfair), 'Times New Roman', serif;
+        font-style: italic;
+    }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground font-roboto-flex;
+    }
+}
+
+@layer components {
+    .grid {
+        @apply gap-[25px];
+    }
+
+    .markdown-text ul {
+        @apply pl-5 mt-2 list-disc;
+    }
+}
+
+@font-face {
+    font-family: 'ButterFont';
+    src: url('/fonts/butter.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.font-butter {
+    font-family: 'ButterFont', sans-serif;
+}
