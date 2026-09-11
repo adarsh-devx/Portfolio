@@ -6,7 +6,7 @@ import './globals.css';
 import Footer from '@/components/Footer';
 import ScrollProgressIndicator from '@/components/ScrollProgressIndicator';
 import ParticleBackground from '@/components/ParticleBackground';
-import Navbar from '@/components/Navbar';
+import SterlingGateKineticNavigation from '@/components/ui/sterling-gate-kinetic-navigation';
 // import CustomCursor from '@/components/CustomCursor';
 import Preloader from '../components/Preloader';
 import StickyEmail from './_components/StickyEmail';
@@ -73,7 +73,7 @@ export default function RootLayout({
                         Frontend dev? I&apos;ll help you polish your resume —
                         completely free.
                     </a> */}
-                    <Navbar />
+                    <SterlingGateKineticNavigation />
                     <main>{children}</main>
                     <Footer />
 
