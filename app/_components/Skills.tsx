@@ -58,35 +58,35 @@ const Skills = () => {
     );
 
     return (
-        <section id="my-stack" ref={containerRef}>
-            <div className="container">
+        <section id="my-stack" ref={containerRef} className="py-8 sm:py-16">
+            <div className="container px-4 sm:px-6">
                 <SectionTitle title="My Stack" />
 
-                <div className="space-y-20">
+                <div className="space-y-14 sm:space-y-20">
                     {Object.entries(MY_STACK).map(([key, value]) => (
-                        <div className="grid sm:grid-cols-12" key={key}>
+                        <div className="grid sm:grid-cols-12 gap-4 sm:gap-6" key={key}>
                             <div className="sm:col-span-5">
-                                <p className="slide-up text-5xl font-anton leading-none text-muted-foreground uppercase">
+                                <p className="slide-up text-3xl sm:text-4xl md:text-5xl font-anton leading-none text-muted-foreground uppercase mb-4 sm:mb-0">
                                     {key}
                                 </p>
                             </div>
 
-                            <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
+                            <div className="sm:col-span-7 flex gap-x-6 sm:gap-x-10 gap-y-6 sm:gap-y-8 flex-wrap">
                                 {value.map((item) => (
                                     <div
-                                        className="slide-up flex gap-3.5 items-center leading-none"
+                                        className="slide-up flex gap-3 items-center leading-none bg-card/20 sm:bg-transparent px-3 py-2 sm:p-0 rounded-lg border border-border/20 sm:border-none"
                                         key={item.name}
                                     >
-                                        <div>
+                                        <div className="shrink-0">
                                             <Image
                                                 src={item.icon}
                                                 alt={item.name}
-                                                width="40"
-                                                height="40"
-                                                className="max-h-10"
+                                                width="36"
+                                                height="36"
+                                                className="max-h-8 sm:max-h-10 w-auto"
                                             />
                                         </div>
-                                        <span className="text-2xl capitalize">
+                                        <span className="text-lg sm:text-2xl capitalize font-medium">
                                             {item.name}
                                         </span>
                                     </div>

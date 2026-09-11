@@ -52,33 +52,33 @@ const AboutMe = () => {
     );
 
     return (
-        <section className="pb-section" id="about-me">
-            <div className="container" ref={container}>
-                <h2 className="text-4xl md:text-6xl font-thin mb-20 slide-up-and-fade">
+        <section className="pb-section pt-8 sm:pt-16" id="about-me">
+            <div className="container px-4 sm:px-6" ref={container}>
+                <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-thin mb-12 sm:mb-20 slide-up-and-fade leading-tight">
                     I believe in a user centered design approach, ensuring that
                     every project I work on is tailored to meet the specific
                     needs of its users.
                 </h2>
 
-                <p className="pb-3 border-b text-muted-foreground slide-up-and-fade">
+                <p className="pb-3 border-b border-border/40 text-muted-foreground slide-up-and-fade text-sm sm:text-base">
                     This is me.
                 </p>
 
-                <div className="grid md:grid-cols-12 mt-9">
+                <div className="grid md:grid-cols-12 gap-8 md:gap-4 mt-9">
                     <div className="md:col-span-5">
-                        <p className="text-5xl slide-up-and-fade">
+                        <p className="text-3xl sm:text-4xl md:text-5xl slide-up-and-fade font-medium leading-tight">
                             Hi, I&apos;m Adarsh Kushwaha.
                         </p>
                     </div>
                     <div className="md:col-span-7">
-                        <div className="text-lg text-muted-foreground max-w-[450px]">
-                            <p className="slide-up-and-fade">
+                        <div className="text-base sm:text-lg text-muted-foreground max-w-[480px] space-y-4">
+                            <p className="slide-up-and-fade leading-relaxed">
                                 I&apos;m a full-stack web developer dedicated to
                                 turning ideas into creative solutions. I
                                 specialize in creating seamless and intuitive
                                 user experiences.
                             </p>
-                            <p className="mt-3 slide-up-and-fade">
+                            <p className="slide-up-and-fade leading-relaxed">
                                 My approach focuses on creating scalable,
                                 high-performing solutions tailored to both user
                                 needs and business objectives. By prioritizing
