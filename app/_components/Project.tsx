@@ -107,7 +107,7 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            {selectedProject === null && (
+            {selectedProject === null && project.thumbnail && (
                 <Image
                     src={project.thumbnail}
                     alt="Project"
@@ -120,24 +120,25 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                     loading="lazy"
                 />
             )}
-            <div className="flex gap-2 md:gap-5">
-                <div className="font-anton text-muted-foreground">
+            <div className="flex gap-2 sm:gap-4 md:gap-5 items-start">
+                <div className="font-anton text-muted-foreground text-lg sm:text-2xl pt-1">
                     _{(index + 1).toString().padStart(2, '0')}.
                 </div>
-                <div className="">
-                    <h4 className="text-4xl xs:text-6xl flex gap-4 font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
-                        {project.title}
-                        <span className="text-foreground opacity-0 group-hover:opacity-100 transition-all">
+                <div className="flex-1 min-w-0">
+                    <h4 className="text-3xl sm:text-5xl md:text-6xl flex items-center gap-3 sm:gap-4 font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left break-words">
+                        <span>{project.title}</span>
+                        <span className="text-foreground opacity-0 group-hover:opacity-100 transition-all shrink-0">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="36"
-                                height="36"
+                                width="28"
+                                height="28"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
+                                className="size-6 sm:size-8"
                                 ref={externalLinkSVGRef}
                             >
                                 <path
@@ -149,17 +150,17 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                             </svg>
                         </span>
                     </h4>
-                    <div className="mt-2 flex flex-wrap gap-3 text-muted-foreground text-xs">
+                    <div className="mt-2.5 flex flex-wrap gap-2 sm:gap-3 text-muted-foreground text-xs sm:text-sm">
                         {project.techStack
                             .slice(0, 3)
                             .map((tech, idx, stackArr) => (
                                 <div
-                                    className="gap-3 flex items-center"
+                                    className="gap-2 sm:gap-3 flex items-center"
                                     key={tech}
                                 >
-                                    <span className="">{tech}</span>
+                                    <span>{tech}</span>
                                     {idx !== stackArr.length - 1 && (
-                                        <span className="inline-block size-2 rounded-full bg-background-light"></span>
+                                        <span className="inline-block size-1.5 sm:size-2 rounded-full bg-border"></span>
                                     )}
                                 </div>
                             ))}

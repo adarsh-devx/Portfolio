@@ -2,6 +2,7 @@ import { IProject } from '@/types';
 
 export const GENERAL_INFO = {
     email: 'devx-adarshh@gmail.com',
+    phone: '+91 764 400 8647',
 
     emailSubject: "Let's collaborate on a project",
     emailBody: 'Hi Adarsh, I am reaching out to you because...',
@@ -109,177 +110,183 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
     {
-        title: 'Electro EV',
-        slug: 'electro-ev',
-        liveUrl: 'https://electroev.co.uk/',
+        title: 'Nyxi',
+        slug: 'nyxi',
+        liveUrl: 'https://nyxi-brown.vercel.app/',
+        sourceCode: 'https://github.com/adarsh-devx/Nyxi-Chrome-Extension',
         year: 2025,
         description: `
-      A complete agency portfolio platform built for Electro EV to showcase their services, blog content, and product offerings. <br/> <br/>
+      Nyxi transforms your default browser new tab into a living, high-definition desktop experience. Built for minimalism and visual delight, it combines live animated wallpapers, quick links, and productivity widgets in an ultra-clean glassmorphic interface.<br/><br/>
       
-      Key Features:<br/>
+      Key Features:
       <ul>
-        <li>🛠️ Service Display System: Interactive service showcase with synchronized sliders</li>
-        <li>✍️ Blog Management: SEO-friendly blog with categorization and search</li>
-        <li>🛒 Product Catalog: Organized product display with filtering capabilities</li>
-        <li>📱 Fully Responsive: Optimized for all device sizes</li>
-        <li>⚡ Fast Performance: Optimized Next.js frontend with ISR (Incremental Static Regeneration)</li>
-      </ul><br/>
-      
-      Technical Highlights:
-      <ul>
-        <li>Implemented complex slider synchronization logic using Swiper.js</li>
-        <li>Customized Payload CMS admin panel for intuitive content management</li>
-        <li>Developed reusable UI components with shadcn for design consistency</li>
-        <li>Configured efficient data fetching strategies in Next.js</li>
+        <li>✨ Living Scenes & HD Wallpapers: High-quality dynamic video/animated backgrounds</li>
+        <li>⚡ Instant Startup: Optimized Manifest V3 architecture with zero lag</li>
+        <li>🔗 Quick Links & Bookmarks: Custom link hub with automatic favicons</li>
+        <li>🎨 Neo-Brutalist & Glassmorphic UI: Custom curated aesthetic theme</li>
       </ul>
       `,
         role: `
-      Full-Stack Developer <br/>
-      Owned the entire development lifecycle:
+      Lead Developer & Designer<br/>
       <ul>
-        <li>✅ Backend: Configured Payload CMS with custom collections for services, blogs, and products</li>
-        <li>🎨 Frontend: Built all UI components using Tailwind CSS and shadcn</li>
-        <li>🔄 State Management: Implemented client-side data fetching and caching</li>
-        <li>🖥️ CMS Customization: Created admin interfaces for content editors</li>
-        <li>🚀 Deployment: Set up CI/CD pipeline for Vercel hosting</li>
-        <li>🧩 Third-Party Integration: Added Swiper.js for interactive sliders</li>
+        <li>🚀 Built Chrome Extension Manifest V3 core using TypeScript & Vite</li>
+        <li>🎨 Designed and built the live landing page with Next.js & Tailwind CSS</li>
+        <li>💾 Implemented debounced storage synchronization and custom widget settings</li>
       </ul>
       `,
         techStack: [
             'Next.js',
-            'Payload CMS',
+            'TypeScript',
+            'React',
             'Tailwind CSS',
-            'shadcn',
-            'Swiper.js',
-            'React Hook Form',
-            'Vercel',
+            'Chrome Extension API',
+            'Vite',
         ],
-        thumbnail: '/projects/thumbnail/mti-electronics.webp',
-        longThumbnail: '/projects/long/mti-electronics.webp',
-        images: [
-            '/projects/images/mti-electronics-1.webp',
-            '/projects/images/mti-electronics-2.webp',
-        ],
+        thumbnail: '',
+        longThumbnail: '',
+        images: [],
     },
     {
-        title: 'Epikcart',
-        slug: 'epikcart',
+        title: 'Kaun Disha Mei',
+        slug: 'kaundishamei',
+        liveUrl: 'https://www.kaundishamei.me/',
+        year: 2025,
+        description: `
+      "दो मुसाफ़िर — दो यार, एक नाव, समुंदर भर के गाने"<br/><br/>
+      An atmospheric, scenic web audio streaming platform created for sea wanderers and roadtrip melodies. Delivers a calming, soulful listening journey with ambient sound effects, active traveler counters, and curated tracks.
+      <br/><br/>
+      Key Features:
+      <ul>
+        <li>🎵 Web Audio Player: Custom playback engine with shuffle, loop, and playlist browsing</li>
+        <li>👥 Real-Time Travelers Count: Live online listener presence tracking ("51 Safar par")</li>
+        <li>🚢 Interactive Soundscapes: Playable ship horn and travel chimes</li>
+        <li>🌊 Glassmorphic Horizon Theme: Immersive oceanic visuals and fluid animations</li>
+      </ul>
+      `,
+        role: `
+      Creator & Frontend Developer<br/>
+      <ul>
+        <li>🎧 Integrated HTML5 Web Audio API for custom soundscapes & audio controls</li>
+        <li>🎨 Designed glassmorphic UI elements and responsive layout with Tailwind CSS</li>
+        <li>⚡ Optimized audio stream caching and dynamic playlist loading</li>
+      </ul>
+      `,
         techStack: [
             'React',
-            'Redux',
-            'React i18n',
-            'Tailwind CSS',
-            'Framer Motion',
-            'debouncing',
-            'Api Integration',
-        ],
-        thumbnail: '/projects/thumbnail/epikcart.jpg',
-        longThumbnail: '/projects/long/epikcart.jpg',
-        images: [
-            '/projects/images/epikcart-1.png',
-            '/projects/images/epikcart-2.png',
-            '/projects/images/epikcart-3.png',
-            '/projects/images/epikcart-4.png',
-            '/projects/images/epikcart-5.png',
-        ],
-        liveUrl: 'https://demo.epikcart.siphertech.com/',
-        year: 2023,
-        description: `Epikcart is a feature-rich, scalable e-commerce platform tailored for large businesses. It features dynamic product filtering, multi-language support with RTL, advanced inventory management, order tracking, and refund systems, offering a comprehensive solution for multi-vendor operations.`,
-        role: `As the frontend developer in a team of five, I: <br/>
-        - Built the frontend from scratch using React, Redux, RTK Query, and Tailwind CSS.<br/>
-        - Developed dynamic filtering logic for the product search page with admin-configurable parameters.<br/>
-        - Integrated multi-language support with React i18n, including RTL handling.<br/>
-        - Delivered a responsive, user-friendly interface in collaboration with the UI/UX designer.`,
-    },
-    {
-        title: 'Resume Roaster',
-        slug: 'resume-roaster',
-        techStack: [
-            'GPT-4',
             'Next.js',
-            'Postgressql',
-            'Prisma',
+            'Web Audio API',
             'Tailwind CSS',
-        ],
-        thumbnail: '/projects/thumbnail/resume-roaster.jpg',
-        longThumbnail: '/projects/long/resume-roaster.jpg',
-        images: [
-            '/projects/images/resume-roaster-1.png',
-            '/projects/images/resume-roaster-2.png',
-            '/projects/images/resume-roaster-3.png',
-        ],
-        liveUrl: 'https://resume-roaster.vercel.app/',
-        year: 2023,
-        description:
-            'Resume Roaster is a web application designed to provide tailored resume feedback and professional writing services. Built with Next.js, PostgreSQL, Prisma, and Tailwind CSS, it integrates GPT-4 for AI-powered recommendations. The platform also includes peer-to-peer reviews with a points-based system, fostering a collaborative and engaging experience. Targeting freshers, experienced professionals, and programmers, it helps optimize resumes for job-specific success.',
-        role: `As the sole developer and business owner, I:<br/>
-        - Designed and developed the platform end-to-end using Next.js, PostgreSQL, Prisma, and Tailwind CSS.<br/>
-        - Integrated GPT-4 for AI-driven feedback and insights.<br/>
-        - Implemented complex SQL queries, including one to identify the top two resumes based on user points.`,
-    },
-    {
-        title: 'Real Estate',
-        slug: 'property-pro',
-        techStack: [
-            'React.js',
-            'Redux',
-            'Tailwind CSS',
-            'React i18n',
             'Framer Motion',
         ],
-        thumbnail: '/projects/thumbnail/property-pro.jpg',
-        longThumbnail: '/projects/long/property-pro.jpg',
-        images: [
-            '/projects/images/property-pro-1.png',
-            '/projects/images/property-pro-2.png',
-            '/projects/images/property-pro-3.png',
-        ],
-        liveUrl: 'https://demo.propertypro.siphertech.com/',
-        year: 2023,
-        description:
-            'PropertyPro is a real estate management platform offering users a seamless experience to explore, manage, and view property listings. The application emphasizes accessibility and responsive design, ensuring a smooth interface across devices.',
-        role: `As the frontend developer, I:<br/>
-        - Built the frontend using React, Redux, RTK Query, Framer Motion, and Tailwind CSS.<br/>
-        - Integrated dynamic state management for efficient handling of property data.<br/>
-        - Implemented multi-language support with React i18n to cater to diverse audiences.<br/>
-        - Enhanced user interaction with animations and transitions using Framer Motion.`,
+        thumbnail: '',
+        longThumbnail: '',
+        images: [],
     },
     {
-        title: 'Consulting Finance',
-        slug: 'crenotive',
-        techStack: ['HTML', 'CSS & SCSS', 'Javascript', 'Bootstrap'],
-        thumbnail: '/projects/thumbnail/consulting-finance.jpg',
-        longThumbnail: '/projects/long/consulting-finance.jpg',
-        images: [
-            '/projects/images/consulting-finance-1.png',
-            '/projects/images/consulting-finance-2.png',
-            '/projects/images/consulting-finance-3.png',
+        title: 'MyNotes',
+        slug: 'mynotes',
+        liveUrl: 'https://mynotes-pooq.onrender.com/',
+        year: 2024,
+        description: `
+      MyNotes serves as your digital "second brain" — a distraction-free cloud workspace to capture spontaneous thoughts, manage daily task checklists, and organize knowledge from any device.
+      <br/><br/>
+      Key Features:
+      <ul>
+        <li>🔒 Google OAuth 2.0: One-click secure sign-in and account management</li>
+        <li>📝 Markdown Notes & Task Lists: Rich text organization and checkbox trackers</li>
+        <li>☁️ Cloud Synchronization: Seamless real-time data sync across mobile and desktop</li>
+        <li>📱 Minimalist UI: Distraction-free, responsive clean interface</li>
+      </ul>
+      `,
+        role: `
+      Full-Stack Developer<br/>
+      <ul>
+        <li>🔐 Implemented Google OAuth 2.0 authentication and user session management</li>
+        <li>⚙️ Built RESTful API endpoints using Node.js & Express.js deployed on Render</li>
+        <li>💻 Developed responsive note organizing and task management interface</li>
+      </ul>
+      `,
+        techStack: [
+            'Node.js',
+            'Express.js',
+            'Google OAuth 2.0',
+            'MongoDB',
+            'React',
+            'Tailwind CSS',
         ],
-        sourceCode: 'https://github.com/adarsh-devx/crenotive',
-        liveUrl: 'https://crenotive.netlify.app/',
-        year: 2023,
-        description:
-            'I developed Crenotive, a portfolio website using Html, SASS, and jQuery to showcase services and expertise. The design focuses on responsive user experience and effective presentation of professional achievements.',
-        role: ``,
+        thumbnail: '',
+        longThumbnail: '',
+        images: [],
     },
     {
-        title: 'devLinks',
-        slug: 'devLinks',
-        techStack: ['Next.js', 'Formik', 'Drag & Drop', 'Tailwind CSS'],
-        thumbnail: '/projects/thumbnail/devLinks.jpg',
-        longThumbnail: '/projects/long/devLinks.jpg',
-        images: [
-            '/projects/images/devLinks-1.png',
-            '/projects/images/devLinks-2.png',
-            '/projects/images/devLinks-3.png',
+        title: 'Team-Sync',
+        slug: 'team-sync',
+        sourceCode: 'https://github.com/adarsh-devx/Team-Sync',
+        year: 2024,
+        description: `
+      A modern team directory and employee management dashboard built to help administrative teams manage staff directories, track employee onboarding, and oversee departmental status with ease.
+      <br/><br/>
+      Key Features:
+      <ul>
+        <li>👥 Employee Directory: Paginated and searchable staff listing with metric badges</li>
+        <li>⚡ Status Toggling: Instant Active/Inactive employee status management</li>
+        <li>📋 Form Validation: Modular member registration and editing workflows</li>
+        <li>📊 Admin Metrics: Quick-view cards for workforce overview</li>
+      </ul>
+      `,
+        role: `
+      Frontend Developer<br/>
+      <ul>
+        <li>🏗️ Architected component hierarchy using React and Vite</li>
+        <li>🎨 Built responsive administrative interface with Tailwind CSS</li>
+        <li>🔄 Handled form state management and tabular pagination filters</li>
+      </ul>
+      `,
+        techStack: [
+            'React',
+            'Vite',
+            'JavaScript',
+            'Tailwind CSS',
+            'Context API',
         ],
-        sourceCode: 'https://github.com/adarsh-devx/devsLink',
-        liveUrl: 'https://devlinks-demo.vercel.app/auth/signin',
-        year: 2023,
-        description: `One of the most challenging projects in Frontend Mentor.<br/><br/>
-
-            I developed a LinkSharing App as part of the Frontend Mentor challenge, utilizing React, Redux, and Tailwind CSS to create a responsive and feature-rich platform. The app allows users to share, save, and explore links, with a focus on intuitive design and smooth navigation. Advanced state management ensures efficient data handling for user interactions.`,
-        role: ``,
+        thumbnail: '',
+        longThumbnail: '',
+        images: [],
+    },
+    {
+        title: 'Kookify',
+        slug: 'kookify',
+        sourceCode: 'https://github.com/adarsh-devx/Kookify',
+        year: 2024,
+        description: `
+      Kookify is a fast, responsive culinary recipe management web application designed for food enthusiasts to curate, search, edit, and organize custom recipes and cooking procedures.
+      <br/><br/>
+      Key Features:
+      <ul>
+        <li>🍲 Full Recipe CRUD: Create, read, update, and delete culinary recipes</li>
+        <li>❤️ Favorites Collection: Save bookmarked recipes with instant LocalStorage sync</li>
+        <li>⚡ Dynamic Form Validation: Smooth multi-field recipe builder using React Hook Form</li>
+        <li>🎨 Custom UI Elements: Custom metallic button components and animated 404 page</li>
+      </ul>
+      `,
+        role: `
+      Frontend Developer<br/>
+      <ul>
+        <li>🍳 Built dynamic recipe forms and validation using React Hook Form</li>
+        <li>💾 Implemented client-side caching & favorites bookmarking with LocalStorage</li>
+        <li>📱 Created fully mobile-responsive UI with Tailwind CSS and Vite</li>
+      </ul>
+      `,
+        techStack: [
+            'React',
+            'Tailwind CSS',
+            'React Hook Form',
+            'Vite',
+            'JavaScript',
+        ],
+        thumbnail: '',
+        longThumbnail: '',
+        images: [],
     },
 ];
 

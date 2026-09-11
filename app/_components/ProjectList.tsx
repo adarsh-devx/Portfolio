@@ -115,22 +115,24 @@ const ProjectList = () => {
                             ref={imageContainer}
                         >
                             {PROJECTS.map((project) => (
-                                <Image
-                                    src={project.thumbnail}
-                                    alt="Project"
-                                    width="400"
-                                    height="500"
-                                    className={cn(
-                                        'absolute inset-0 transition-all duration-500 w-full h-full object-cover',
-                                        {
-                                            'opacity-0':
-                                                project.slug !==
-                                                selectedProject,
-                                        },
-                                    )}
-                                    ref={imageRef}
-                                    key={project.slug}
-                                />
+                                project.thumbnail ? (
+                                    <Image
+                                        src={project.thumbnail}
+                                        alt="Project"
+                                        width="400"
+                                        height="500"
+                                        className={cn(
+                                            'absolute inset-0 transition-all duration-500 w-full h-full object-cover',
+                                            {
+                                                'opacity-0':
+                                                    project.slug !==
+                                                    selectedProject,
+                                            },
+                                        )}
+                                        ref={imageRef}
+                                        key={project.slug}
+                                    />
+                                ) : null
                             ))}
                         </div>
                     )}
