@@ -127,28 +127,37 @@ const Project = ({ index, project, selectedProject, onMouseEnter }: Props) => {
                 <div className="flex-1 min-w-0">
                     <h4 className="text-3xl sm:text-5xl md:text-6xl flex items-center gap-3 sm:gap-4 font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left break-words">
                         <span>{project.title}</span>
-                        <span className="text-foreground opacity-0 group-hover:opacity-100 transition-all shrink-0">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="28"
-                                height="28"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="size-6 sm:size-8"
-                                ref={externalLinkSVGRef}
+                        {(project.liveUrl || project.sourceCode) && (
+                            <a
+                                href={project.liveUrl || project.sourceCode}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                onClick={(e) => e.stopPropagation()}
+                                title={`Open ${project.title} (${project.liveUrl ? 'Live Site' : 'GitHub'})`}
+                                className="text-foreground/90 hover:text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 shrink-0 p-1 hover:scale-125 pointer-events-auto"
                             >
-                                <path
-                                    id="box"
-                                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                                ></path>
-                                <path id="arrow-line" d="M10 14 21 3"></path>
-                                <path id="arrow-curb" d="M15 3h6v6"></path>
-                            </svg>
-                        </span>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="28"
+                                    height="28"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="size-6 sm:size-8"
+                                    ref={externalLinkSVGRef}
+                                >
+                                    <path
+                                        id="box"
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    ></path>
+                                    <path id="arrow-line" d="M10 14 21 3"></path>
+                                    <path id="arrow-curb" d="M15 3h6v6"></path>
+                                </svg>
+                            </a>
+                        )}
                     </h4>
                     <div className="mt-2.5 flex flex-wrap gap-2 sm:gap-3 text-muted-foreground text-xs sm:text-sm">
                         {project.techStack
