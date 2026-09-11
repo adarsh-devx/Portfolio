@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export function SterlingGateKineticNavigation() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -174,11 +175,11 @@ export function SterlingGateKineticNavigation() {
             <div className="site-header-wrapper">
                 <header className="header">
                     <div className="nav-row">
-                        <a
+                        <Link
                             href="/"
                             aria-label="home"
                             className="nav-logo-row"
-                        ></a>
+                        ></Link>
                         <div className="nav-row__right">
                             <button
                                 type="button"
