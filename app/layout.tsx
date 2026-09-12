@@ -38,8 +38,22 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-    title: 'Portfolio - Adarsh Kushwaha',
-    description: 'Personal portfolio of Adarsh Kushwaha',
+    metadataBase: new URL('https://adarshx.dev'),
+    title: 'Adarsh Kushwaha — Creative FullStack Developer',
+    description: 'Personal portfolio of Adarsh Kushwaha — Creative FullStack Developer crafting high-performance, scalable web experiences.',
+    openGraph: {
+        title: 'Adarsh Kushwaha — Creative FullStack Developer',
+        description: 'Creative FullStack Developer crafting high-performance, scalable web experiences with Next.js, React, Node.js & GSAP.',
+        url: 'https://adarshx.dev',
+        siteName: 'Adarsh Kushwaha Portfolio',
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Adarsh Kushwaha — Creative FullStack Developer',
+        description: 'Creative FullStack Developer crafting high-performance, scalable web experiences.',
+    },
     icons: {
         icon: [
             { url: '/icon.png', sizes: '512x512', type: 'image/png' },
