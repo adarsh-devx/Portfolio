@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
-import { ArrowUpRight, Check, Copy, Sparkles, Mail, Github } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Mail, Github, Instagram } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
@@ -12,17 +12,14 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const CallToAction = () => {
     const containerRef = useRef<HTMLDivElement>(null);
-    const [copied, setCopied] = useState(false);
-
-    const handleCopyEmail = () => {
-        navigator.clipboard.writeText(GENERAL_INFO.email);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-    };
 
     const githubLink =
         SOCIAL_LINKS.find((item) => item.name.toLowerCase() === 'github')?.url ||
         'https://github.com/adarsh-devx';
+
+    const instagramLink =
+        SOCIAL_LINKS.find((item) => item.name.toLowerCase() === 'instagram')?.url ||
+        'https://www.instagram.com/uradarssh';
 
     useGSAP(
         () => {
@@ -86,31 +83,26 @@ const CallToAction = () => {
                             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </a>
 
-                        <button
-                            onClick={handleCopyEmail}
-                            className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full border border-border bg-card/60 hover:bg-card text-foreground font-medium text-base transition-all duration-300 hover:border-primary/50 hover:scale-105 active:scale-95"
+                        <a
+                            href={instagramLink}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full border border-border bg-card/60 hover:bg-card text-foreground font-medium text-base transition-all duration-300 hover:border-primary/50 hover:text-primary hover:scale-105 active:scale-95"
                         >
-                            {copied ? (
-                                <>
-                                    <Check className="w-4 h-4 text-emerald-400" />
-                                    <span className="text-emerald-400">Email Copied!</span>
-                                </>
-                            ) : (
-                                <>
-                                    <Copy className="w-4 h-4 text-muted-foreground" />
-                                    <span>Copy Email</span>
-                                </>
-                            )}
-                        </button>
+                            <Instagram className="w-4 h-4" />
+                            <span>Instagram</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+                        </a>
 
                         <a
                             href={githubLink}
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full border border-border bg-card/60 hover:bg-card text-foreground font-medium text-base transition-all duration-300 hover:border-primary/50 hover:scale-105 active:scale-95"
+                            className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full border border-border bg-card/60 hover:bg-card text-foreground font-medium text-base transition-all duration-300 hover:border-primary/50 hover:text-primary hover:scale-105 active:scale-95"
                         >
                             <Github className="w-4 h-4" />
                             <span>GitHub</span>
+                            <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
                         </a>
                     </div>
 

@@ -14,7 +14,7 @@ export const GENERAL_INFO = {
 export const SOCIAL_LINKS = [
     { name: 'github', url: 'https://github.com/adarsh-devx' },
     { name: 'linkedin', url: 'https://www.linkedin.com/in/adarsh-devx' },
-    { name: 'facebook', url: 'https://www.facebook.com/adarsh-devx' },
+    { name: 'instagram', url: 'https://www.instagram.com/uradarssh' },
 ];
 
 export const MY_STACK = {

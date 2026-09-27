@@ -21,6 +21,14 @@ const Footer = () => {
         SOCIAL_LINKS.find((item) => item.name.toLowerCase() === 'linkedin')
             ?.url || 'https://www.linkedin.com/in/adarsh-devx';
 
+    const instagramLink =
+        SOCIAL_LINKS.find((item) => item.name.toLowerCase() === 'instagram')
+            ?.url || 'https://www.instagram.com/uradarssh';
+
+    const githubLink =
+        SOCIAL_LINKS.find((item) => item.name.toLowerCase() === 'github')
+            ?.url || 'https://github.com/adarsh-devx';
+
     return (
         <footer
             id="contact"
@@ -65,7 +73,7 @@ const Footer = () => {
                                 Work
                             </Link>
                             <a
-                                href="/resume.pdf"
+                                href="/MyCV.jpg"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="hover:text-primary transition-colors duration-200"
@@ -79,6 +87,22 @@ const Footer = () => {
                                 className="hover:text-primary transition-colors duration-200"
                             >
                                 LinkedIn
+                            </a>
+                            <a
+                                href={instagramLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="hover:text-primary transition-colors duration-200"
+                            >
+                                Instagram
+                            </a>
+                            <a
+                                href={githubLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="hover:text-primary transition-colors duration-200"
+                            >
+                                GitHub
                             </a>
                         </nav>
                     </div>
