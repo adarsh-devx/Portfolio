@@ -73,7 +73,7 @@ const Footer = () => {
                                 Work
                             </Link>
                             <a
-                                href="/MyCV.jpg"
+                                href="/CV.jpg"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="hover:text-primary transition-colors duration-200"

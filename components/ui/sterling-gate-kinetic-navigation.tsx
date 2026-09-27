@@ -521,7 +521,7 @@ export function SterlingGateKineticNavigation() {
                                 <li className="menu-list-item" data-shape="4">
                                     <button
                                         type="button"
-                                        onClick={() => handleNavigate('/MyCV.jpg')}
+                                        onClick={() => handleNavigate('/CV.jpg')}
                                         className="nav-link w-inline-block text-left w-full"
                                     >
                                         <p className="nav-link-text">Resume</p>
