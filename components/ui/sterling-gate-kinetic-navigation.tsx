@@ -162,11 +162,31 @@ export function SterlingGateKineticNavigation() {
 
     const handleNavigate = (url: string) => {
         setIsMenuOpen(false);
-        if (url.startsWith('http') || url.endsWith('.pdf')) {
+        if (
+            url.startsWith('http') ||
+            url.endsWith('.pdf') ||
+            url.endsWith('.jpg') ||
+            url.endsWith('.jpeg') ||
+            url.endsWith('.png') ||
+            url.endsWith('.webp')
+        ) {
             window.open(url, '_blank');
-        } else {
-            router.push(url);
+            return;
         }
+
+        if (url.startsWith('/#') || url.startsWith('#')) {
+            const hash = url.includes('#') ? url.substring(url.indexOf('#')) : '';
+            if (typeof window !== 'undefined' && window.location.pathname === '/') {
+                const target = document.querySelector(hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    window.history.pushState(null, '', hash);
+                    return;
+                }
+            }
+        }
+
+        router.push(url);
     };
 
     return (
@@ -501,7 +521,7 @@ export function SterlingGateKineticNavigation() {
                                 <li className="menu-list-item" data-shape="4">
                                     <button
                                         type="button"
-                                        onClick={() => handleNavigate('/resume.pdf')}
+                                        onClick={() => handleNavigate('/MyCV.jpg')}
                                         className="nav-link w-inline-block text-left w-full"
                                     >
                                         <p className="nav-link-text">Resume</p>
